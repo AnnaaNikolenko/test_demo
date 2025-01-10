@@ -10,24 +10,15 @@ jobs:
   test:
     runs-on: ubuntu-latest
 
-
-  steps:
-      # STEP 1. From repository our code will upload from Githab to container
-    - name: Checkout repository
-      # Githab has a special ready function for this step called checkout@v3 (version 3)
-      uses: actions/checkout@v3
-      # STEP 2. Python will be installed to our container
-    - name: Setup Python
-      # Special githab's function for this step is setup-python (version 4)
-      uses: actions/setup-python@v4
-      # And we will set version of python that will be installed
-      with: python-version:"3.10"
-      # STEP 3. Install Chrome
-    - name: Install Chrome
-      run: sudo apt-get install google-chrome-stable
-      # STEP 4. Install all dependencies which have been written in requirements.txt file
-    - name: Install dependencies
-      run: pip install -r requirements.txt
-      # STEP 5. Run tests using pytest
-    - name: Run tests
-      run: pytest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with: python-version:"3.10"
+      - name: Install Chrome
+        run: sudo apt-get install google-chrome-stable
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Run tests
+        run: pytest
