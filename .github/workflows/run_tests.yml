@@ -8,8 +8,7 @@ on:
 # Which virtual container will be using for the tests starting
 jobs:
   test:
-  # Which system will use fot our tests
-  runs-on: macOS-latest
+    runs-on: macOS-latest
 
 
   steps:
