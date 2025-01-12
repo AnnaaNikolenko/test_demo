@@ -29,9 +29,9 @@ jobs:
         run: sudo apt-get install google-chrome-stable
       - name: Install dependencies
         run: pip install -r requirements.txt
-      - name: First test
-        if: "github.event.inputs.deployment_target == 'First_test'"
+      - name: first test
+        if: "github.event.inputs.deployment_target == 'first_test'"
         run: pytest -v -s test_base_page.py::test_click_homepage
-      - name: Second test
-        if: "github.event.inputs.deployment_target == 'Second_test'"
+      - name: second test
+        if: "github.event.inputs.deployment_target == 'second_test'"
         run: pytest -v -s test_base_page.py::test_click_single_elements
