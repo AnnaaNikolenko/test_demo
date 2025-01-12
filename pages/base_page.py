@@ -14,4 +14,7 @@ class BasePage:
         self.driver.get(url)
 
     def click(self, homepage):
-        return self.find_element(homepage).click()
+        self.find_element(homepage).click()
+
+    def get(self, locator):
+        return self.find_element(locator).text
