@@ -9,8 +9,8 @@ on:
         default:
           type: choice
           options:
-            - first_test
-            - second_test
+            - test_first
+            - test_second
 
 # Which virtual container will be using for the tests starting
 jobs:
@@ -28,9 +28,9 @@ jobs:
         run: sudo apt-get install google-chrome-stable
       - name: Install dependencies
         run: pip install -r requirements.txt
-      - name: first test
-        if: "github.event.inputs.deployment_target == 'first_test'"
-        run: pytest -v -s test_base_page.py::test_click_homepage
-      - name: second test
-        if: "github.event.inputs.deployment_target == 'second_test'"
-        run: pytest -v -s test_base_page.py::test_click_single_elements
+      - name: test_first
+        if: "github.event.inputs.deployment_target == 'test_first'"
+        run: pytest -v -s test_base_page.py::test_first
+      - name: test_second
+        if: "github.event.inputs.deployment_target == 'test_second'"
+        run: pytest -v -s test_base_page.py::test_second
