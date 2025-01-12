@@ -1,6 +1,5 @@
 name: Automated tests
 
-# Go when
 on:
   workflow_dispatch:
     inputs:
