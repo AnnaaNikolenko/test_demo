@@ -11,6 +11,7 @@ on:
         options:
           - test_first
           - test_second
+          - all_tests
 
 jobs:
   test:
@@ -33,3 +34,6 @@ jobs:
       - name: test_second
         if: "github.event.inputs.deployment_target == 'test_second'"
         run: pytest -v -s test_base_page.py::test_second
+      - name: all_tests
+        if: "github.event.inputs.deployment_target == 'all_tests'"
+        run: pytest -v -s
