@@ -12,7 +12,6 @@ on:
           - test_first
           - test_second
 
-# Which virtual container will be using for the tests starting
 jobs:
   test:
     runs-on: ubuntu-latest
