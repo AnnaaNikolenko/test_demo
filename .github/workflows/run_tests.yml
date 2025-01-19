@@ -7,10 +7,10 @@ on:
         description: Choose target
         required: true
         default:
-          type: choice
-          options:
-            - test_first
-            - test_second
+        type: choice
+        options:
+          - test_first
+          - test_second
 
 # Which virtual container will be using for the tests starting
 jobs:
